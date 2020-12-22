@@ -3,9 +3,10 @@ var app = express();
 console.log("Hello World");
 
 app.get("/", function(req, res) {
-  absolutePath = __dirname + "/views/index.html"
-  res.sendFile(absolutePath);
+  res.sendFile(__dirname + "/views/index.html");
 });
+
+app.use(express.static(__dirname + "/public"));
 
 
 
